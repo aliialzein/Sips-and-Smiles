@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project (includes lint)
+      - name: Build project
         run: npm run build
 
       - name: Run tests
