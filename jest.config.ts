@@ -1,20 +1,23 @@
 import type { Config } from "@jest/types";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+require('ts-jest');
 
-const config: Config.InitialOptions ={
-    preset: 'ts-jest',
-    testEnvironment: 'node',
-    roots: ['<rootDir>/tests'],
-    testMatch: ['**/*.test.ts'],
-    verbose: true,
-    collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.ts'],
-    coverageDirectory: 'coverage',
-    coverageThreshold: {
-        global: {
-            functions: 85,
-            statements: 75,
-        },
+const config: Config.InitialOptions = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/tests'],
+  testMatch: ['**/*.test.ts'],
+  verbose: true,
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.ts'],
+  coverageDirectory: 'coverage',
+  coverageThreshold: {
+    global: {
+      functions: 85,
+      statements: 75,
     },
-}
+  },
+};
 
 export default config;
